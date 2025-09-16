@@ -40,6 +40,7 @@ export default function RootLayout({
         />
 
         {/* SEO Meta Tags */}
+        <meta name="google-site-verification" content="etLT725mk-sDytNX8UZuS1BSdzF5lfMztZSwfPcbxzQ" />
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords.join(", ")} />
