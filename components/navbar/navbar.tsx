@@ -1,31 +1,51 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./navbar.module.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+  const hamburgerRef = useRef<HTMLDivElement | null>(null);
 
-  // Prevent background scroll when menu is open
+  // Close when clicking outside the menu or pressing Esc
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    const handleDocClick = (e: MouseEvent | TouchEvent) => {
+      if (!menuOpen) return;
+      const target = e.target as Node;
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(target) &&
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(target)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+
+    document.addEventListener("mousedown", handleDocClick);
+    document.addEventListener("touchstart", handleDocClick);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handleDocClick);
+      document.removeEventListener("touchstart", handleDocClick);
+      document.removeEventListener("keydown", handleKey);
+    };
   }, [menuOpen]);
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-    setMenuOpen(false); // close menu after clicking
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
   };
 
   return (
-    <div className={styles.navbar}>
+    <nav className={styles.navbar}>
       {/* GitHub Icon */}
       <div className={styles.githubArea}>
         <a
@@ -46,42 +66,34 @@ const Navbar = () => {
 
       {/* Hamburger (Mobile) */}
       <div
+        ref={hamburgerRef}
         className={styles.hamburger}
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={() => setMenuOpen((v) => !v)}
+        aria-expanded={menuOpen}
+        aria-label="Toggle menu"
+        role="button"
       >
-    <i className={`fa-solid ${menuOpen ? "fa-xmark" : "fa-bars"}`}></i>
+        <i className={`fa-solid ${menuOpen ? "fa-xmark" : "fa-bars"}`}></i>
       </div>
 
-      {/* AnimatePresence handles mount/unmount animations */}
-      <AnimatePresence>
+      {/* Mobile Menu (no overlay) */}
+      <AnimatePresence initial={false}>
         {menuOpen && (
-          <>
-            {/* Dark overlay */}
-            <motion.div
-              className={styles.overlay}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.6 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onClick={() => setMenuOpen(false)} // close on outside click
-            />
-
-            {/* Mobile Menu Drawer */}
-            <motion.div
-              className={styles.mobileMenu}
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-            >
-              <button onClick={() => scrollToSection("about")}>About</button>
-              <button onClick={() => scrollToSection("projects")}>Projects</button>
-              <button onClick={() => scrollToSection("contact")}>Contact</button>
-            </motion.div>
-          </>
+          <motion.div
+            ref={menuRef}
+            className={styles.mobileMenu}
+            initial={{ x: "110%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "110%", opacity: 0 }}
+            transition={{ type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.28 }}
+          >
+            <button onClick={() => scrollToSection("about")}>About</button>
+            <button onClick={() => scrollToSection("projects")}>Projects</button>
+            <button onClick={() => scrollToSection("contact")}>Contact</button>
+          </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </nav>
   );
 };
 

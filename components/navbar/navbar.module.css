@@ -6,57 +6,47 @@
   top: 10px;
   left: 10px;
   right: 10px;
-  height: 50px;
-  padding: 0 25px;
+  height: 55px;
+  padding: 0 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
-  border-radius: 25px;
-  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  /* Slightly darker (not fully opaque) glass */
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
 
-  /* Glass core */
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(20px) saturate(200%);
-  -webkit-backdrop-filter: blur(20px) saturate(200%);
-
-  /* Subtle watery shine */
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.25) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-
-  /* Glow + depth */
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.35),
-    inset 0 0 25px rgba(255, 255, 255, 0.2);
+    0 8px 25px rgba(0, 0, 0, 0.45),
+    inset 0 0 12px rgba(255, 255, 255, 0.06);
+
   color: white;
   font-weight: 500;
   z-index: 1000;
-  transition: all 0.35s ease;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.18s ease;
 }
 
+/* left area */
 .githubArea {
-  font-size: 150%;
+  font-size: 1.3rem;
 }
-
 .githubArea a {
   color: white;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
-
 .githubArea a:hover {
   color: #38bdf8;
 }
 
-/* 🔹 Profile links (desktop) */
+/* desktop links */
 .profileArea {
   display: flex;
-  gap: 15px;
+  gap: 14px;
 }
-
 .profileArea button {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 16px;
   border-radius: 12px;
   color: white;
   font-size: 0.95rem;
@@ -64,105 +54,102 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: all 0.32s cubic-bezier(.2,.9,.2,1);
 }
-
-.profileArea button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
-  transform: skewX(-20deg);
-  transition: all 0.6s ease;
-}
-
-.profileArea button:hover::before {
-  left: 100%;
-}
-
 .profileArea button:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(56, 189, 248, 0.7);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(56, 189, 248, 0.7);
   color: #38bdf8;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.18);
 }
 
-/* 🌐 Mobile Responsive */
+/* mobile hamburger */
 .hamburger {
   display: none;
-  font-size: 100%;
+  font-size: 1.05rem;
   color: white;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 8px 12px;
-  border-radius: 12px;
-  transition: background 0.3s ease;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: background 0.18s ease, transform 0.12s ease;
 }
-
 .hamburger:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
 }
 
-/* Dark overlay */
-.overlay {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background: transparent;
-  z-index: 998;
-  opacity: 0.6;
-}
-
-/* ✅ Unified Mobile Menu */
+/* MOBILE MENU (no overlay) */
 .mobileMenu {
   position: fixed;
-  top: 80px;
+  top: 72px;
   right: 10px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(15px) saturate(200%);
-  -webkit-backdrop-filter: blur(15px) saturate(200%);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 20px 30px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  width: 250px;
+  max-height: calc(100vh - 110px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  /* dark frosted drawer */
+  background: rgba(18, 18, 18, 0.92);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.55),
+    inset 0 0 14px rgba(255, 255, 255, 0.03),
+    0 0 18px rgba(56, 189, 248, 0.08); /* subtle theme glow */
+
+  color: #fff;
   z-index: 999;
+  will-change: transform, opacity;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
+/* menu buttons */
 .mobileMenu button {
   background: transparent;
   border: none;
   color: white;
-  font-size: 120%;
+  font-size: 1.05rem;
+  font-weight: 600;
   cursor: pointer;
   text-align: left;
-  transition: color 0.3s ease;
+  padding: 10px 6px;
+  transition: color 0.22s ease, transform 0.22s ease;
 }
-
 .mobileMenu button:hover {
   color: #38bdf8;
+  transform: translateX(6px);
 }
 
-/* Hide profile links & show hamburger on small screens */
+/* responsive */
 @media (max-width: 768px) {
   .profileArea {
     display: none;
   }
-
   .hamburger {
     display: block;
+  }
+
+  .navbar {
+    padding: 0 14px;
+    left: 8px;
+    right: 8px;
+  }
+}
+
+/* small tweak for very small screens */
+@media (max-width: 420px) {
+  .mobileMenu {
+    right: 6px;
+    top: 68px;
+    width: 200px;
+    border-radius: 12px;
   }
 }
