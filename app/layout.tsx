@@ -13,6 +13,13 @@ export const metadata = {
     "Frontend Developer",
     "Backend Developer",
     "Web Developer Portfolio",
+    "Gideon",
+    "gideon",
+    "Ebedaowei",
+    "Kofi",
+    "kofi",
+    "ebedaowei",
+    "web developer"
   ],
   author: "Kofi Ebedaowei Gideon",
 };
