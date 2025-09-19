@@ -147,7 +147,7 @@
 
 .attribute {
   width: 230px;
-  min-height: 150px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,7 +205,7 @@
 
   .attribute {
     width: 160px;
-    min-height: 130px;
+    height: 130px;
   }
 
   .attribute i {
@@ -227,8 +227,8 @@
   }
 
   .attribute {
-    width: 140px;
-    min-height: 120px;
+    width: 120px;
+    min-height: 100px;
     padding: 10px;
   }
 

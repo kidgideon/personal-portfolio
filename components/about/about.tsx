@@ -8,7 +8,6 @@ const About = () => {
       <h4>
         {"I'm a passionate full-stack developer with a love for creating innovative digital solutions. My journey in tech started with curiosity and has evolved into expertise across multiple domains."}
       </h4>
-
       </div>
       
       <div className={styles.journeyDescription}>
