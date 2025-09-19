@@ -1,0 +1,143 @@
+.projectsInterface {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 0px;
+  gap: 20px;
+  color: white;
+}
+
+.projectsInterface h1 {
+  font-size: 2rem;
+  color: #38bdf8;
+}
+
+.projectsInterface p {
+  max-width: 700px;
+  color: #ddd;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 25px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* === Glassmorphism Project Card === */
+.project {
+  width: 350px;
+  height: 565px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 0 20px rgba(255, 255, 255, 0.1),
+    0 0 15px rgba(56, 189, 248, 0.3);
+
+  transition: all 0.35s ease;
+}
+
+.project:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.project img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.projectContent {
+  padding: 20px;
+  height: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.projectContent h2 {
+  color: #38bdf8;
+  font-size: 1.3rem;
+}
+
+.projectContent p {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  color: #eee;
+}
+
+.project a {
+  margin-top: 10px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: fit-content;
+}
+
+.project a:hover {
+  transform: translateY(-2px);
+}
+
+.linkAligner {
+    width: 90%;
+    text-align: start;
+    padding: 10px 0px;
+}
+
+/* GitHub Button */
+.githubBtn {
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 12px 24px;
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.githubBtn:hover {
+  transform: translateY(-2px);
+
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .project {
+    width: 95%;
+    max-width: 500px;
+    margin: 30px 0px;
+  }
+}

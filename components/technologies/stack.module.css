@@ -13,7 +13,7 @@
 }
 
 .stacks {
-    width: 95%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,9 +24,8 @@
 }
 
 .stack {
-
-    padding: 10px 30px;
-
+    padding: 10px 10px;
+    text-align: center;
       border-radius: 30px;
   border: 1.5px solid rgba(255, 255, 255, 0.15);
 
@@ -45,4 +44,14 @@
   color: #fff;
   font-size: 90%;
   transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.stack:hover {
+    transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.65),
+    inset 0 0 28px rgba(255, 255, 255, 0.08),
+    0 0 20px rgba(56, 189, 248, 0.7),
+    0 0 45px rgba(56, 189, 248, 0.5);
 }

@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Intro from "../components/intro/intro";
 import About from "../components/about/about";
 import Stack from "../components/technologies/stacks";
+import Projects from "../components/projects/projects";
 import Head from "next/head"; // <-- add this
 
 
@@ -74,6 +75,7 @@ export default function Home() {
         <Intro />
         <About />
         <Stack/>
+        <Projects/>
       </div>
     </>
   );
