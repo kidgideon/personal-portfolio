@@ -2,7 +2,9 @@ import Navbar from "../components/navbar/navbar";
 import styles from "./page.module.css";
 import Intro from "../components/intro/intro";
 import About from "../components/about/about";
+import Stack from "../components/technologies/stacks";
 import Head from "next/head"; // <-- add this
+
 
 export default function Home() {
   return (
@@ -71,6 +73,7 @@ export default function Home() {
         <Navbar />
         <Intro />
         <About />
+        <Stack/>
       </div>
     </>
   );
