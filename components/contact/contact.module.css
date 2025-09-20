@@ -1,0 +1,76 @@
+.contactInterface {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    margin: 40px 0px;
+    padding: 40px 0px;
+}
+
+.contactInterface h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #38bdf8;
+}
+
+.contactInterface p {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: #ddd;
+}
+
+.contactGrid {
+ width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contactCard {
+  flex: 1 1 250px;
+  max-width: 280px;
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.contactCard:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45),
+    0 0 20px rgba(56, 189, 248, 0.4);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.contactCard i {
+  font-size: 2rem;
+  color: #38bdf8;
+  margin-bottom: 1rem;
+}
+
+.contactCard h3 {
+  margin-bottom: 0.5rem;
+  color: #f5f5f5;
+}
+
+.contactCard p,
+.contactCard a {
+  font-size: 0.95rem;
+  color: #ddd;
+  text-decoration: none;
+}
+
+.contactCard a:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}

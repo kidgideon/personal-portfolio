@@ -4,10 +4,16 @@ import { motion } from "framer-motion";
 import styles from "./intro.module.css";
 
 const Intro = () => {
+  // smooth scroll helper
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section
-      className={styles.introInterface}
-    >
+    <section className={styles.introInterface}>
       <div className={styles.overlay}></div>
 
       <motion.div
@@ -52,12 +58,14 @@ const Intro = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => scrollToSection("projects")}
           >
             View my work
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => scrollToSection("contact")}
           >
             Get in touch
           </motion.button>
@@ -70,10 +78,27 @@ const Intro = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.5, duration: 0.8 }}
         >
-          <span><i className="fa-brands fa-linkedin"></i></span>
-          <span><i className="fa-brands fa-github"></i></span>
-          <span><i className="fa-brands fa-square-x-twitter"></i></span>
-          <span><i className="fa-brands fa-square-instagram"></i></span>
+          <a
+            href="https://www.linkedin.com/in/gideon-kofi-08158b2a9/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/kidgideon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="https://twitter.com/kid_Gideon_1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-square-x-twitter"></i>
+          </a>
         </motion.div>
       </motion.div>
     </section>

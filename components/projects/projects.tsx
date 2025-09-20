@@ -4,6 +4,7 @@ import styles from "./projects.module.css";
 import minimartImage from "../../images/minimart.png";
 import traitsnapImage from "../../images/traitsnap.png";
 import mindburstImage from "../../images/mindburst.png";
+import metattrade from "../../images/metatradeScreenshot.png";
 
 const projects = [
   {
@@ -18,6 +19,15 @@ const projects = [
     alt: "Minimart project",
     demoLink: "https://minimart.ng",
     priority: true,
+  },
+    {
+    title: "Metatrade",
+    description: `Metatrade Community is a platform that connects buyers and sellers through a professional brokerage system. It streamlines trading by acting as an intermediary, offering market insights, deal negotiation, and risk reduction to ensure smooth and profitable transactions.`,
+    stack: "React, Firebase, Node.js, Express, mongodb",
+    image: metattrade,
+    alt: "metatrade project",
+    demoLink: "https://metatradecommunity.com",
+    priority: false,
   },
   {
     title: "Traitsnap",
@@ -48,7 +58,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className={styles.projectsInterface}>
+    <div className={styles.projectsInterface} id="projects">
       <h1>Featured Projects</h1>
       <p>
         A showcase of my top projects, highlighting expertise in full-stack

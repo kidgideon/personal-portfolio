@@ -44,6 +44,26 @@
   border-right: 2px solid #38bdf8;
 }
 
+.connectionIcon {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.connectionIcon a {
+  color: #fff; /* inherit your white theme */
+  font-size: 1.8rem;
+  text-decoration: none; /* remove underline */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.connectionIcon a:hover {
+  color: #38bdf8; /* light cyan hover (matches your skills title) */
+  transform: scale(1.15);
+}
+
+
 /* Typing effect */
 .typing {
   animation: blinkCursor 0.8s infinite;

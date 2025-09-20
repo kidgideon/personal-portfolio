@@ -4,6 +4,9 @@ import Intro from "../components/intro/intro";
 import About from "../components/about/about";
 import Stack from "../components/technologies/stacks";
 import Projects from "../components/projects/projects";
+import Skills from "../components/skills/skills";
+import Contact from "../components/contact/contact";
+import Footer from "../components/footer/footer";
 import Head from "next/head"; // <-- add this
 
 
@@ -76,6 +79,9 @@ export default function Home() {
         <About />
         <Stack/>
         <Projects/>
+        <Skills/>
+        <Contact/>
+        <Footer/>
       </div>
     </>
   );
