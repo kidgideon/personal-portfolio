@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import styles from "./intro.module.css";
 
+
 const Intro = () => {
   // smooth scroll helper
   const scrollToSection = (id: string) => {

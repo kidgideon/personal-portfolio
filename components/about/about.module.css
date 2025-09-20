@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px 0;
+  padding-top: 100px;
 }
 
 .topSection {
@@ -19,7 +19,7 @@
 }
 
 .topSection h1 {
-  font-size: 2.5rem;
+  font-size: 100%;
   color: #38bdf8;
   letter-spacing: 1px;
   text-align: center;

@@ -10,6 +10,7 @@
     backdrop-filter: blur(15px);
     margin: 40px 0px;
     padding: 40px 0px;
+    padding-top: 100px;
 }
 
 .contactInterface h1 {

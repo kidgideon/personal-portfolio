@@ -98,12 +98,14 @@ const Projects = () => {
         ))}
       </div>
 
-      <button className={styles.githubBtn}>
+ <a href="https://github.com/kidgideon" target="_blank">
+      <button className={styles.githubBtn}>  
         <span>
           <i className="fa-brands fa-github"></i>
         </span>{" "}
         View All Projects on GitHub
       </button>
+      </a>
     </div>
   );
 };
