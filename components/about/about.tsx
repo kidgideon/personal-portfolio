@@ -15,7 +15,7 @@ const About = () => {
           <div className={styles.journeyText}>
             <h2>My journey</h2>
             <p>
-              {"With over 4 years of professional experience, I've had the privilege of working on diverse projects ranging from startup MVPs to enterprise-level applications. My expertise spans across modern web technologies, cloud platforms, and database systems. I believe in writing clean, maintainable code and staying updated with the latest industry trends. When I'm not coding, you'll find me contributing to open-source projects or mentoring fellow developers."}
+              {"With over 2 years of professional experience, I've had the privilege of working on diverse projects ranging from startup MVPs to enterprise-level applications. My expertise spans across modern web technologies, cloud platforms, and database systems. I believe in writing clean, maintainable code and staying updated with the latest industry trends. When I'm not coding, you'll find me contributing to open-source projects or mentoring fellow developers."}
             </p>
           </div>
           <div className={styles.coreValues}>
@@ -32,7 +32,7 @@ const About = () => {
         <div className={styles.personalAttributes}>
           <div className={styles.attribute}>
             <i className="fa-solid fa-user-tie"></i>
-            <h1>+3 years</h1>
+            <h1>+2 years</h1>
             <p>Professional experience</p>
           </div>
 
